@@ -1,0 +1,25 @@
+{
+  "name": "tower-defense",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare-dist": "npx concurrently -m 1 \"npx rimraf ./dist\" \"npx mkdirp ./dist\" \"ncp ./src/index.html ./dist/index.html\"",
+    "serve": "npx concurrently \"npx http-server ./dist\" \"npx tsc --watch\"",
+    "start": "npx concurrently -m 1 \"npm run prepare-dist\" \"npm run serve\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "http-server": "^14.1.1",
+    "mkdirp": "^3.0.1",
+    "ncp": "^2.0.0",
+    "rimraf": "^5.0.5",
+    "typescript": "~4.9.5"
+  },
+  "dependencies": {
+    "pixi.js": "7.3.2"
+  }
+}

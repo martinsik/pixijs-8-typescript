@@ -1,0 +1,9 @@
+{
+    "include": ["src/lib/index.ts"],
+    "compilerOptions": {
+        "outDir": "dist",
+        "sourceMap": true,
+        "moduleResolution": "nodenext",
+        "module": "NodeNext"
+    },
+}
