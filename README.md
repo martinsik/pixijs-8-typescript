@@ -1,1 +1,1 @@
-# pixijs-7-typescript
+# pixijs-8-typescript
