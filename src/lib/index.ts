@@ -2,14 +2,15 @@ import { a } from './pkg.js';
 
 import * as PIXI from 'pixi.js';
 
-window.addEventListener('load', (event) => {
+window.addEventListener('load', async (event) => {
     const canvas = document.querySelector('canvas');
 
     // Create the application helper and add its render target to the page
-    let app = new PIXI.Application({
+    let app = new PIXI.Application();
+    await app.init({
         hello: true,
         resizeTo: window,
-        view: canvas,
+        canvas,
     });
 
     // create a new Sprite from an image path
@@ -30,7 +31,7 @@ window.addEventListener('load', (event) => {
         // just for fun, let's rotate mr rabbit a little
         // delta is 1 if running at 100% performance
         // creates frame-independent transformation
-        bunny.rotation += 0.1 * delta;
+        bunny.rotation += 0.1 * delta.elapsedMS;
     });
 
     console.log(a);
